@@ -1,0 +1,13 @@
+{
+  "name": "web3-university",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "pnpm --filter frontend dev",
+    "build": "pnpm --filter frontend build",
+    "contracts:compile": "pnpm --filter contracts compile",
+    "contracts:deploy:local": "pnpm --filter contracts deploy:local",
+    "contracts:deploy:sepolia": "pnpm --filter contracts deploy:sepolia",
+    "contracts:node": "pnpm --filter contracts node"
+  }
+}

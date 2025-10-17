@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Element UI 风格全局样式 */
+@layer base {
+  :root {
+    --border: 220 20% 90%; /* 示例颜色值 */
+    /* Element UI 色彩变量 */
+    --color-primary: 64 158 255;
+    --color-success: 103 194 58;
+    --color-warning: 230 162 60;
+    --color-danger: 245 108 108;
+    --color-info: 144 147 153;
+    
+    /* 文本颜色 */
+    --color-text-primary: 48 49 51;
+    --color-text-regular: 96 98 102;
+    --color-text-secondary: 144 147 153;
+    --color-text-placeholder: 192 196 204;
+    
+    /* 边框颜色 */
+    --color-border-base: 220 223 230;
+    --color-border-light: 228 231 237;
+    --color-border-lighter: 235 238 245;
+    
+    /* 背景颜色 */
+    --color-background-base: 245 247 250;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+}
+
+@layer components {
+  /* Element UI 风格按钮 */
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md transition-colors duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-success {
+    @apply bg-success-500 hover:bg-success-600 text-white px-4 py-2 rounded-md transition-colors duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-success-500 focus:ring-offset-2;
+  }
+  
+  .btn-warning {
+    @apply bg-warning-500 hover:bg-warning-600 text-white px-4 py-2 rounded-md transition-colors duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-warning-500 focus:ring-offset-2;
+  }
+  
+  .btn-danger {
+    @apply bg-danger-500 hover:bg-danger-600 text-white px-4 py-2 rounded-md transition-colors duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-danger-500 focus:ring-offset-2;
+  }
+
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+    @apply transition-shadow duration-200;
+  }
+
+  .card:hover {
+    @apply shadow-md;
+  }
+
+  /* 输入框样式 */
+  .input {
+    @apply border border-gray-300 rounded-md px-3 py-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply transition-colors duration-200;
+  }
+
+  /* 文本截断 */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* 渐变文字 */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  /* 玻璃morphism效果 */
+  .glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* 加载动画 */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  /* 淡入动画 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  /* 脉冲动画 */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@layer utilities {
+  /* 文本颜色工具类 */
+  .text-text-primary {
+    color: rgb(var(--color-text-primary));
+  }
+
+  .text-text-regular {
+    color: rgb(var(--color-text-regular));
+  }
+
+  .text-text-secondary {
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .text-text-placeholder {
+    color: rgb(var(--color-text-placeholder));
+  }
+
+  /* 边框颜色工具类 */
+  .border-border-base {
+    border-color: rgb(var(--color-border-base));
+  }
+
+  .border-border-light {
+    border-color: rgb(var(--color-border-light));
+  }
+
+  .border-border-lighter {
+    border-color: rgb(var(--color-border-lighter));
+  }
+
+  /* 背景颜色工具类 */
+  .bg-background-base {
+    background-color: rgb(var(--color-background-base));
+  }
+
+  /* 响应式隐藏工具 */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

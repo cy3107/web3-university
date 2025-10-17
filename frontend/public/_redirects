@@ -1,0 +1,8 @@
+# Cloudflare Pages 重定向配置
+/*    /index.html   200
+
+# API 路由
+/api/*  https://api.zhimahu.work/:splat  200
+
+# 静态资源缓存
+/assets/*  /assets/:splat  200  Cache-Control: max-age=31536000
